@@ -10,12 +10,6 @@ const $list = $(
   </ul>
 );
 
-const $list2 = $(
-  <div>
-    <ul></ul>
-  </div>
-);
-
 describe('.first()', () => {
   it('returns the top-level tag by default', async () => {
     expect($list.first().nodeName).toBe('UL');
@@ -26,6 +20,6 @@ describe('.first()', () => {
   });
 
   it('returns null value when no items found', async () => {
-    expect($list2.find('li').first()).toEqual(null);
+    expect($list.find('div').first()).toEqual(null);
   });
 });
